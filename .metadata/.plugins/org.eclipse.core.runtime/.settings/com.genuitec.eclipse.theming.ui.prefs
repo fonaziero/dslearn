@@ -1,9 +1,10 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1649720987000
-configurationInstallLocation=/C\:/Users/Victor/eclipse/java-2021-063/eclipse/
+configurationInstallLocation=/C\:/sts-4.16.1.RELEASE/
 eclipse.preferences.version=1
 iconcolormode=primary
-last.download.attempt.time=1666134454482
-lastConfiguration=1666790978681
+includeThemingInOomph=false
+last.download.attempt.time=1666840103629
+lastConfiguration=1666839431343
 newinstall=true
 workbench.theme=Dark Gray
