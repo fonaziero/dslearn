@@ -17,3 +17,8 @@ INSERT INTO tb_course (name, img_uri, img_gray_uri) VALUES ('BootCamp Html', 'ht
 
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('1.0', TIMESTAMP WITH TIME ZONE '2022-10-28T03:00:00.00Z', TIMESTAMP WITH TIME ZONE '2023-10-29T03:00:00.00Z', 1);
 INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('2.0', TIMESTAMP WITH TIME ZONE '2022-11-28T03:00:00.00Z', TIMESTAMP WITH TIME ZONE '2023-12-29T03:00:00.00Z', 1);
+
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha HTML', 'Trilha principal do curso ' , 1 , 'https://eucontador.com.br/wp-content/uploads/2019/10/Cursos-Online.png' , 1, 1 );
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Forum', 'Tire suas duvidas ' , 2 , 'https://eucontador.com.br/wp-content/uploads/2019/10/Cursos-Online.png' , 2, 1 );
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives', 'Lives exclusivas para a turma ' , 3 , 'https://eucontador.com.br/wp-content/uploads/2019/10/Cursos-Online.png' , 0, 1 );
+
