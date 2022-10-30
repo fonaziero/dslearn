@@ -22,3 +22,8 @@ INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) 
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Forum', 'Tire suas duvidas ' , 2 , 'https://eucontador.com.br/wp-content/uploads/2019/10/Cursos-Online.png' , 2, 1 );
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives', 'Lives exclusivas para a turma ' , 3 , 'https://eucontador.com.br/wp-content/uploads/2019/10/Cursos-Online.png' , 0, 1 );
 
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id , prerequisite_id) VALUES ('Capitulo 1', 'Neste capitulo vamos começar' , 1 , 'https://eucontador.com.br/wp-content/uploads/2019/10/Cursos-Online.png', 1 , null);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id , prerequisite_id) VALUES ('Capitulo 2', 'Neste capitulo vamos continuar' , 2 , 'https://eucontador.com.br/wp-content/uploads/2019/10/Cursos-Online.png', 1 , 1);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id , prerequisite_id) VALUES ('Capitulo 3', 'Neste capitulo vamos finalizar' , 3 , 'https://eucontador.com.br/wp-content/uploads/2019/10/Cursos-Online.png', 1 , 2);
+
+
