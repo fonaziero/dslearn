@@ -39,7 +39,7 @@ public class Enrollment implements Serializable{
 	public Enrollment() {
 		
 	}
-
+ 
 	public Enrollment(User user, Offer offer, Instant enrollMoment, Instant refundMoment, boolean avalable,
 			boolean onlyUpdate) {
 		super();
