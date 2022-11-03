@@ -1,10 +1,8 @@
 package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,11 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "tb_section")
 public class Section implements Serializable {
-
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -27,16 +23,15 @@ public class Section implements Serializable {
 	private Integer position;
 	private String imgUri;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "resource_id")
 	private Resource resource;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "prerequisite_id")
 	private Section prerequisite;
 	
 	public Section() {
-		
 	}
 
 	public Section(Long id, String title, String description, Integer position, String imgUri, Resource resource,
@@ -107,13 +102,12 @@ public class Section implements Serializable {
 		this.prerequisite = prerequisite;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
 	}
 
 	@Override
@@ -125,9 +119,11 @@ public class Section implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Section other = (Section) obj;
-		return Objects.equals(id, other.id);
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
-	
-	
-
 }

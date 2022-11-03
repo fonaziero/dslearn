@@ -3,7 +3,6 @@ package com.devsuperior.dslearnbds.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,9 +18,8 @@ import com.devsuperior.dslearnbds.entities.enums.ResourceType;
 @Entity
 @Table(name = "tb_resource")
 public class Resource implements Serializable {
-
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -30,21 +28,19 @@ public class Resource implements Serializable {
 	private Integer position;
 	private String imgUri;
 	private ResourceType type;
-	private String externalLink;
 	
 	@ManyToOne
 	@JoinColumn(name = "offer_id")
 	private Offer offer;
-	
+
 	@OneToMany(mappedBy = "resource")
-	private List<Section> section = new ArrayList<>(); 
+	private List<Section> sections = new ArrayList<>();
 	
 	public Resource() {
-		
 	}
 
 	public Resource(Long id, String title, String description, Integer position, String imgUri, ResourceType type,
-			String externalLink) {
+			Offer offer) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -52,7 +48,7 @@ public class Resource implements Serializable {
 		this.position = position;
 		this.imgUri = imgUri;
 		this.type = type;
-		this.externalLink = externalLink;
+		this.offer = offer;
 	}
 
 	public Long getId() {
@@ -103,17 +99,20 @@ public class Resource implements Serializable {
 		this.type = type;
 	}
 
-	public String getExternalLink() {
-		return externalLink;
+	public Offer getOffer() {
+		return offer;
 	}
 
-	public void setExternalLink(String externalLink) {
-		this.externalLink = externalLink;
+	public void setOffer(Offer offer) {
+		this.offer = offer;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
 	}
 
 	@Override
@@ -125,7 +124,11 @@ public class Resource implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Resource other = (Resource) obj;
-		return Objects.equals(id, other.id);
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
-	
 }
