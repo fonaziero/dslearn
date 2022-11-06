@@ -2084,3 +2084,5 @@ Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was
 2022-11-05 22:20:50,199 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
 2022-11-05 22:20:50,210 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2022-11-05 22:20:50,212 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-05 22:20:50,212 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-05 22:20:50,212 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Victor\Desktop\Curso DsLearn\bds-dslearn\backend\src\test\resources
